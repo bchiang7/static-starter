@@ -5,15 +5,13 @@ const jsPath   = 'src/js/*.js';
 const destPath = 'dist/js';
 
 module.exports = gulp => {
-
-  gulp.task( 'scripts', () => {
-    return gulp.src( jsPath )
-    .pipe( eslint( {
+  gulp.task('scripts', () => {
+    return gulp.src(jsPath)
+      .pipe(eslint({
         useEslintrc: true
-      } ) )
-    .pipe( eslint.format() )
-    .pipe( uglify() )
-    .pipe( gulp.dest( destPath ) );
+      }))
+      .pipe(eslint.format())
+      .pipe(uglify())
+      .pipe(gulp.dest(destPath));
   });
-
 }

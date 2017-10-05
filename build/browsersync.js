@@ -5,8 +5,7 @@ const scssPath     = 'src/scss/**/*.scss';
 const jsPath       = 'src/js/*.js';
 
 module.exports = gulp => {
-
-  gulp.task( 'serve', () => {
+  gulp.task('serve', () => {
     browserSync.init({
       notify: false,
       server: {
@@ -14,9 +13,8 @@ module.exports = gulp => {
       }
     });
 
-    gulp.watch( scssPath, [ 'sass', browserSync.reload ] );
-    gulp.watch( jsPath, [ 'scripts', browserSync.reload ] );
-    gulp.watch( htmlPath, [ 'html', browserSync.reload ] );
+    gulp.watch(scssPath, ['sass', browserSync.reload]);
+    gulp.watch(jsPath, ['scripts', browserSync.reload]);
+    gulp.watch(htmlPath, ['html', browserSync.reload]);
   });
-
 }
